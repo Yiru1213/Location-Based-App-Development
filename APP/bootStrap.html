@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CEGE0043 Bootstrap</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+
+    <!-- code for Leaflet -->
+    <!--include Leaflet CSS file -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <!--include Leaflet JavaScript file -->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+     <!-- incorporate the CSS files required for custom icon creation -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
+    <script src="js/leaflet.awesome-markers.js"></script>
+    <!-- incorporate jquery files -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"/></script>
+</head>
+
+<body onload="loadMap()"> 
+      <div class="container-fluid position-relative bg-warning p-0">
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3 bg-light">
+            <nav class="navbar bg-light navbar-light">
+                <a href="#" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i></h3>
+                </a>
+              <a href="#" class="sidebar-toggler flex-shrink-0 d-lg-none">
+                    <i class="fa fa-bars"></i>
+             </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="img/icon.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">CEGE0043 App</h6>
+                        <span>Yiru1213</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        
+        <!-- Condition Assessment -->
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <div class="nav-item d-lg-none">
+            <a href="#" class="nav-link" onclick="userRanking()";>
+                <i class="fa fa-mobile-alt me-2"></i>
+            User Ranking</a>            
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <div class="nav-item d-lg-none">
+            <a href="#" class="nav-link" onclick="addLayerAsset()";>
+                <i class="fa fa-mobile-alt me-2"></i>
+            Add Layer - 5 cloest assets</a>            
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <div class="nav-item d-lg-none">
+            <a href="#" class="nav-link" onclick="removeLayerAsset()";>
+                <i class="fa fa-mobile-alt me-2"></i>
+            Remove Layer - 5 cloest assets</a>            
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <div class="nav-item d-lg-none">
+            <a href="#" class="nav-link" onclick="addLayerReport()";>
+                <i class="fa fa-mobile-alt me-2"></i>
+            Add Layer - last 5 reports</a>            
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <div class="nav-item d-lg-none">
+            <a href="#" class="nav-link" onclick="removeLayerReport()";>
+                <i class="fa fa-mobile-alt me-2"></i>
+            Remove Layer - last 5 reports</a>            
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <div class="nav-item d-lg-none">
+            <a href="#" class="nav-link" onclick="addLayerRated()";>
+                <i class="fa fa-mobile-alt me-2"></i>
+            Add Layer - not rated in the last 3 days</a>            
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <div class="nav-item d-lg-none">
+            <a href="#" class="nav-link" onclick="removeLayerRated()";>
+                <i class="fa fa-mobile-alt me-2"></i>
+            Remove Layer - not rated in the last 3 days</a>            
+        </div>
+
+
+        <!-- Asset Location -->
+        <!-- Nav Item - Pages Collapse Menu -->
+        <div class="nav-item d-none d-lg-block">
+            <a href="#" class="nav-link" onclick="assetsInBestCondition()">
+                <i class="fa fa-laptop me-2"></i>
+            List of Assets in Best Condition</a>           
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <div class="nav-item d-none d-lg-block">
+            <a href="#" class="nav-link" onclick="reportingRatesGraph()">
+                <i class="fa fa-laptop me-2"></i>
+            Daily Reporting Rates Graph - All Users</a>           
+        </div>
+
+        </nav>
+        </div>
+
+    </div>
+
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div id = "wrapper" class="content d-flex flex-column" >
+        
+            <!-- Navbar Start -->
+            <nav class="navbar bg-light navbar-expand flex-top py-0 px-4">
+                <a href="#" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a> 
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-right ms-auto">
+                    <div class="nav-item d-none d-lg-block">
+                       <a href="userGuide.html" class="nav-link" onclick="help()";>
+                       <i class="fa fa-question-circle"></i>Help</a>            
+                </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="img/icon.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">ucesxum</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+
+                </div>
+            </nav><!-- Navbar End -->
+    <div class="container-fluid px-0">
+        <div id="tablediv"></div>
+        <div class="row d-flex">
+            <div class="col d-flex">
+
+                <div id="mapWrapper" class="col vh-100 collapse show" aria-expanded="true" style="z-order:0">
+                    <div id="mapid" class = 'vh-100 vw-100' style="z-order:0">
+                    </div> <!-- map id --> 
+                </div> <!-- map wrapper -->
+              <!-- z-index = 0 is required to ensure that the menu items from the template
+                appear on top of the map -->
+                <div id="assetDataWrapperWrapper" class="col vh-100 collapse hide" 
+                style="background-color:lightgray;z-order:0">
+                    <div id="assetDataWrapper" class ='vh-100 vw-100'style="z-order:0">
+                        <svg id = 'svg1' class = 'vh-100 vw-100'></svg>
+                    </div> <!-- asset data wrapper -->
+                 </div> <!-- asset data wrapper wrapper -->
+
+            </div> <!-- col d-flex -->
+        </div> <!-- row d-flex -->
+    </div> <!-- container-fluid-->
+
+</div> <!-- container fluid that wraps everything -->
+
+
+
+</div> <!-- content -->
+</div> 
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="js/basicMap.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/saveCondition.js"></script>
+    <script src="js/saveAsset.js" ></script>
+    <script src="js/trackLocation.js"></script>
+    <script src="js/graph.js"></script>
+    <script src="js/proximityAlert.js"></script>
+    <script src="js/loadClosestAsset.js"></script>
+    <script src="js/loadLastReports.js"></script>
+    <script src="js/loadAssetWithMissingReport.js"></script>
+    <!-- Template Javascript  -->
+    <script src="js/bootstrapTemplate.js"></script> 
+    <!--D3 Graph -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!--Table Template-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script> 
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <!-- functionality for data export -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+
+
+</body>
+
+</html>
